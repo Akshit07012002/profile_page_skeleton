@@ -20,14 +20,62 @@ class _ProfilePageState extends State<ProfilePage> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black87,
-          leading: const Drawer(
-            backgroundColor: Colors.black12,
-            child: Icon(
-              Icons.menu,
-              color: Colors.white24,
-            ),
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: const EdgeInsets.symmetric(vertical: 300),
+            scrollDirection: Axis.vertical,
+            children: const [
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
+                child: Center(
+                  child: Text(
+                    ' One ',
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.normal,
+                        fontStyle: FontStyle.italic),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
+                child: Center(
+                  child: Text(
+                    ' Two ',
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.normal,
+                        fontStyle: FontStyle.italic),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
+                child: Center(
+                  child: Text(
+                    ' Three ',
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.normal,
+                        fontStyle: FontStyle.italic),
+                  ),
+                ),
+              )
+            ],
           ),
         ),
+        floatingActionButton: Builder(builder: (context) {
+          return FloatingActionButton(
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          );
+        }),
         body: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -57,42 +105,67 @@ class _ProfilePageState extends State<ProfilePage> {
 
   Widget buildLower() => Container(
         padding: const EdgeInsets.symmetric(horizontal: 48),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(
-              height: 14,
-            ),
-            const Text(
-              'FirstName LastName',
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(
+                height: 14,
               ),
-            ),
-            const SizedBox(
-              height: 14,
-            ),
-            personalInfo(),
-            const SizedBox(
-              height: 24,
-            ),
-            Container(
-              color: Colors.black,
-              //margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-              padding: const EdgeInsetsDirectional.fromSTEB(0, 2, 0, 0),
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            admissionInfo(),
-            const SizedBox(
-              height: 24,
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-          ],
+              const Text(
+                'FirstName LastName',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(
+                height: 14,
+              ),
+              personalInfo(),
+              const SizedBox(
+                height: 24,
+              ),
+              Container(
+                color: Colors.black,
+                //margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                padding: const EdgeInsetsDirectional.fromSTEB(0, 2, 0, 0),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              admissionInfo(),
+              const SizedBox(
+                height: 24,
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              const Text(
+                ' THIS IS A DEMO UI LAYOUT APP ',
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.normal,
+                    fontStyle: FontStyle.italic),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              const Text(
+                ' contains no animations ',
+                style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.normal,
+                    fontStyle: FontStyle.italic),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+            ],
+          ),
         ),
       );
 
