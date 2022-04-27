@@ -20,21 +20,27 @@ class _ProfilePageState extends State<ProfilePage> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black87,
+          title: Text('Profile Page Dummy'),
+          centerTitle: true,
         ),
         drawer: Drawer(
+          backgroundColor: Colors.black87,
           child: ListView(
             padding: const EdgeInsets.symmetric(vertical: 300),
             scrollDirection: Axis.vertical,
             children: const [
               Card(
+                color: Colors.white24,
                 margin: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
                 child: Center(
                   child: Text(
                     ' One ',
                     style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.normal,
-                        fontStyle: FontStyle.italic),
+                      fontSize: 30,
+                      fontWeight: FontWeight.normal,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -42,14 +48,17 @@ class _ProfilePageState extends State<ProfilePage> {
                 height: 20,
               ),
               Card(
+                color: Colors.white24,
                 margin: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
                 child: Center(
                   child: Text(
                     ' Two ',
                     style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.normal,
-                        fontStyle: FontStyle.italic),
+                      fontSize: 30,
+                      fontWeight: FontWeight.normal,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -57,14 +66,17 @@ class _ProfilePageState extends State<ProfilePage> {
                 height: 20,
               ),
               Card(
+                color: Colors.white24,
                 margin: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
                 child: Center(
                   child: Text(
                     ' Three ',
                     style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.normal,
-                        fontStyle: FontStyle.italic),
+                      fontSize: 30,
+                      fontWeight: FontWeight.normal,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               )
