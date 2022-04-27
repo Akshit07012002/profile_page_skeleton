@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Sub-Parts/buildLower.dart';
 
 void main() {
   runApp(const ProfilePage());
@@ -13,6 +14,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   final double coverHeight = 250;
   final double profileHeight = 150;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +22,7 @@ class _ProfilePageState extends State<ProfilePage> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black87,
-          title: Text('Profile Page Dummy'),
+          title: const Text('Profile Page Dummy'),
           centerTitle: true,
         ),
         drawer: Drawer(
@@ -83,11 +85,6 @@ class _ProfilePageState extends State<ProfilePage> {
             ],
           ),
         ),
-        floatingActionButton: Builder(builder: (context) {
-          return FloatingActionButton(
-            onPressed: () => Scaffold.of(context).openDrawer(),
-          );
-        }),
         body: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -115,72 +112,6 @@ class _ProfilePageState extends State<ProfilePage> {
         clipBehavior: Clip.none,
       );
 
-  Widget buildLower() => Container(
-        padding: const EdgeInsets.symmetric(horizontal: 48),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(
-                height: 14,
-              ),
-              const Text(
-                'FirstName LastName',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(
-                height: 14,
-              ),
-              personalInfo(),
-              const SizedBox(
-                height: 24,
-              ),
-              Container(
-                color: Colors.black,
-                //margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-                padding: const EdgeInsetsDirectional.fromSTEB(0, 2, 0, 0),
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              admissionInfo(),
-              const SizedBox(
-                height: 24,
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              const Text(
-                ' THIS IS A DEMO UI LAYOUT APP ',
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.normal,
-                    fontStyle: FontStyle.italic),
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              const Text(
-                ' contains no animations ',
-                style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.normal,
-                    fontStyle: FontStyle.italic),
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-            ],
-          ),
-        ),
-      );
-
   Widget buildCoverImage() => Container(
         color: Colors.black26,
         child: Image.network(
@@ -199,218 +130,5 @@ class _ProfilePageState extends State<ProfilePage> {
           size: 144,
           color: Colors.black,
         ),
-      );
-
-  Widget personalInfo() => Column(
-        children: [
-          const Text(
-            'Personal Information',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(
-            height: 14,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                'Date of Birth : ',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-              ),
-              Text(
-                ' DD / MM / YYYY',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.black54,
-                ),
-              )
-            ],
-          ),
-          const SizedBox(
-            height: 3,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                'Nationality : ',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-              ),
-              Text(
-                ' Indian',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.black54,
-                ),
-              )
-            ],
-          ),
-          const SizedBox(
-            height: 3,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                'Gender : ',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-              ),
-              Text(
-                ' Male',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.black54,
-                ),
-              )
-            ],
-          ),
-          const SizedBox(
-            height: 3,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                'Blood Group : ',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-              ),
-              Text(
-                ' B+ve',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.black54,
-                ),
-              )
-            ],
-          ),
-        ],
-      );
-
-  Widget admissionInfo() => Column(
-        children: [
-          const Text(
-            'Admission Information',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(
-            height: 14,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                'Admission Year : ',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-              ),
-              Text(
-                ' YYYY',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.black54,
-                ),
-              )
-            ],
-          ),
-          const SizedBox(
-            height: 3,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                'Faculty Name : ',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-              ),
-              Text(
-                ' XXXXXXXXXXXX',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.black54,
-                ),
-              )
-            ],
-          ),
-          const SizedBox(
-            height: 3,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                'Programme Name : ',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-              ),
-              Text(
-                ' Male',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.black54,
-                ),
-              )
-            ],
-          ),
-          const SizedBox(
-            height: 3,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                'Specialization : ',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-              ),
-              Text(
-                ' Data Science',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.black54,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 3,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                'PRN : ',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-              ),
-              Text(
-                ' 103220XXXX',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.black54,
-                ),
-              ),
-            ],
-          ),
-        ],
       );
 }
